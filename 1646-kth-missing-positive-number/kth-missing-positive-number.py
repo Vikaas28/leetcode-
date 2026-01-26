@@ -5,11 +5,9 @@ class Solution:
         h=len(arr)-1
         while(l<=h):
             mid=(l+h)//2
-            missing = arr[mid]-(mid+1)
+            missing=arr[mid]-(mid+1)
             if missing <k:
                 l=mid+1
             else:
                 h=mid-1
-        return l+k
-        #return h+1+k            
-     
+        return l+k          
