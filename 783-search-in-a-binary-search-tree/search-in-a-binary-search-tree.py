@@ -5,23 +5,17 @@
 #         self.left = left
 #         self.right = right
 
-#interactive method
-
+#recursive method
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         if not root:
             return None
         
-        curr =root
-        while curr:
-            if val==curr.val:
-                return curr 
-            elif val<curr.val:
-                curr=curr.left 
-            else:
-                curr=curr.right
-        return None                   
-
-
+        if root.val==val:
+            return root
+        elif root .val<val:
+            return self.searchBST(root.right,val)
+        else:
+            return self.searchBST(root.left ,val)        
 
         
