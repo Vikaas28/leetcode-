@@ -3,11 +3,10 @@ class Solution:
         n=len(num)-1
         while n>=0 and k>0:
             k+=num[n]
-            num[n] = k%10
+            num[n]= k% 10 
             k//=10
             n-=1
-
         while k>0:
-            num.insert(0,k%10)
-            k//=10    
-        return num    
+            num.insert(0,k %10)
+            k//=10
+        return num        
