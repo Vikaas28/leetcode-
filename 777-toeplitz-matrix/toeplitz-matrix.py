@@ -2,8 +2,10 @@ class Solution:
     def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:
         r=len(matrix)
         c=len(matrix[0])
-        for i in range(1,r):
-            for j in range(1,c):
-                if matrix[i][j]!=matrix[i-1][j-1]:
+        hash_map={}
+        for i in range(r):
+            for j in range(c):
+                if i-j  in  hash_map and hash_map[i-j]!=matrix[i][j]:
                     return False
-        return True 
+                hash_map[i-j]=matrix[i][j]    
+        return True             
