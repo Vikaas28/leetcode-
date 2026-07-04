@@ -9,7 +9,7 @@ class Solution:
         for i in range(len(nums)):
             curr_lcm=nums[i]
             for j in range(i,len(nums)):
-                curr_lcm=lcm(curr_lcm,nums[j]) #//math.gcd(lcm,nums[j])
+                curr_lcm=(curr_lcm*nums[j])//math.gcd(curr_lcm,nums[j])
                 if curr_lcm>k:
                     break
                 if curr_lcm==k:
