@@ -1,10 +1,21 @@
 class Solution:
     def sumAndMultiply(self, n: int) -> int:
-        digits=[i for i in str(n) if i !='0']
-        if not digits:
-            return 0
-        x=int("".join(digits))
-        summ=sum(int(d) for d in digits)
-        return x*summ
+        summ=0
+        digit=0
+        n=str(n)
+        
+        
+        for i in n :
+            s=int(i)
+            if s ==0 :continue
+            summ+=s
+            #print(summ)
+            #print(s)
+            digit=digit*10 +s
+        return digit * summ
+         
+        
+
+            
 
         #return summ  
