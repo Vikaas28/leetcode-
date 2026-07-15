@@ -1,9 +1,8 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        summ=sum(nums)
         n=len(nums)
-        exp=n*(n+1)//2
-        return exp-summ
-
-        
+        missing=n
+        for i , num in enumerate(nums):
+            missing^=i^num
+        return missing    
         
