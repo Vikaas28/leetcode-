@@ -1,9 +1,8 @@
 class Solution:
     def countSubstrings(self, s: str, c: str) -> int:
-        sub=0
+        freq=Counter(s)
         count=0
-        for i in s:
-            if i ==c:
-                sub+=count+1
-                count+=1
-        return sub        
+        for key , v in freq.items():
+            if key ==c :
+                count+=(v*(v+1))//2
+        return count        
