@@ -1,15 +1,14 @@
 class Solution:
     def dfs(self, u, v, adj,st):
         v[u]=True
-        count=1
         for i in adj[u]:
             if not v[i]:
-                count+=self.dfs(i,v,adj,st)
+                self.dfs(i,v,adj,st)
                     
 
                     
         st.append(u)
-        return count
+        
     def countPairs(self, n: int, edges: List[List[int]]) -> int:
         adj=[[] for  _ in range(n)]
         visited=[False]*n
@@ -18,10 +17,6 @@ class Solution:
             adj[v].append(u)
         count=0 
         res=[] 
-        sizes=[]
-        total=(n*(n-1))//2
-        reach=0
-
 
 
         for i in range(n):
@@ -29,21 +24,16 @@ class Solution:
                 continue
             res=[]    
 
-            size=self.dfs(i,visited,adj,res)
-            sizes.append(size)
-            
+            self.dfs(i,visited,adj,res)
 
-        for i in sizes:
-            reach+=(i*(i-1))//2
-
-
-            #size=len(res)
-            print(i)
-            
+            size=len(res)
+            print(size)
+            count+=size*(n-size)
+            n-=size
 
 
                     
-        return (total-reach)         
+        return count            
 
 
         
