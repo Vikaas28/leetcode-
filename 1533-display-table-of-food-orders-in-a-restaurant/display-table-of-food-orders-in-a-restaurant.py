@@ -14,15 +14,15 @@ class Solution:
         #print(freq)    
         sorted_t=sorted(list(tables))
         sorted_f=sorted(list(order))
-        print(sorted_t)
+        #print(sorted_t)
         res=[["Table"]+sorted_f]
-        print(res)
+        #print(res)
         for t in sorted_t:
             num=[str(t)]
             #print(num)
             for f in sorted_f:
-                count=str(freq[t].get(f,0))
-                print(count)
+                #count=str(freq[t].get(f,0))
+                #rint(count)
                 num.append(str(freq[t].get(f,0)))
             res.append(num)
         return res        
