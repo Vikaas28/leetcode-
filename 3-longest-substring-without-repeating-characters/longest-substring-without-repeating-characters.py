@@ -3,7 +3,7 @@ class Solution:
         seen=set()
         l=0  #slow pointer 
         res=0
-        h=len(s)-1
+        
         for r in range(len(s)):  #fast pointer 
             while s[r] in seen:
                 seen.remove(s[l])
