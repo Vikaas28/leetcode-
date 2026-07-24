@@ -4,18 +4,11 @@ class Solution:
         mn=0
         n=len(s)
         freq={}
+        #print(s.split('c'))
         for r in range(len(s)):
             freq[s[r]]=freq.get(s[r],0)+1
             #print(freq[s[r]])
-        while l < n and freq[s[l]]>=k:
-            l+=1
-        if l>n -1:
-            return l
-        print(s[l:])    
-        ls1=self.longestSubstring(s[0:l],k)
-        while l <n and freq[s[l]]<k:
-            l+=1
-        ls2=self.longestSubstring(s[l:],k) 
-        return max(ls1,ls2)    
-
-            
+        for key , val in freq.items():
+            if val <k:
+                return max(self.longestSubstring(sub,k) for sub in s.split(key))
+        return len(s)        
