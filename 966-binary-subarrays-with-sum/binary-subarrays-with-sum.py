@@ -16,6 +16,6 @@ class Solution:
         for x in nums:
             prefix+=x
             if prefix-goal in mp:
-                count +=mp.get(prefix-goal,0)
+                count +=mp[prefix-goal]
             mp[prefix]=mp.get(prefix,0)+1
         return count         
