@@ -17,15 +17,18 @@ class Solution:
         # return count    
         
         #Optimal approah count  hash map + prefix
-        mp={0:1}
-        prefix=0
-        odd_count=0
-        ans=0
-        for i in range(len(nums)):
-            prefix+=nums[i]
-            if nums[i]%2!=0:
-                odd_count +=1
-            if odd_count -k in mp:
-                ans+=mp.get(odd_count-k,0)
-            mp[odd_count]=mp.get(odd_count,0)+1
-        return ans         
+        def most(k):
+            l=0 
+            count=0
+            odd_count=0
+            for i in range(len(nums)):
+                if nums[i]%2!=0:
+                    odd_count +=1
+                while odd_count >k :
+                    if nums[l]%2!=0:
+                        odd_count-=1
+
+                    l+=1
+                count+=i-l+1
+            return count
+        return most(k)-most(k-1)             
