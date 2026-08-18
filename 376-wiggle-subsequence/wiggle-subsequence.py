@@ -3,17 +3,18 @@ class Solution:
         if len(nums)<2:
             return len(nums)
         sign=0
-        diff=[]
+        diff=0
+        count =1
         #prefix[0]=nums[0]
         for i in range(1, len(nums)):
-            diff.append(nums[i]-nums[i-1])
+            diff=nums[i]-nums[i-1]
         #print(diff)  
-        count =1
-        for i in diff:
-            if i > 0 and sign<=0:
+        
+        
+            if diff > 0 and sign<=0:
                 count +=1
                 sign=1
-            elif i < 0 and sign>=0:
+            elif diff < 0 and sign>=0:
                 count+=1
                 sign=-1
         return count             
