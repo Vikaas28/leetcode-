@@ -12,10 +12,14 @@ class Solution:
         #             nums2[i]=nums1[i]
         #             return True 
         # return False  
-        odd=any(x % 2!=0 for x in nums1)
+        #odd=any(x % 2!=0 for x in nums1)
+        # if not odd :
+        #     return True\
+        odd=[ x for x in nums1 if x%2!=0]
         if not odd :
             return True
-        mini=min( x for x in nums1 if x %2 !=0  ) 
+        mini=min(odd)
+        #mini=min( x for x in nums1 if x %2 !=0 ) 
         for i in nums1:
             if i %2 ==0 and  i < mini:
                 return False
