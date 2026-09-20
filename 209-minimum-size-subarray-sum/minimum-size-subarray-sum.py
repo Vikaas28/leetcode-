@@ -6,8 +6,10 @@ class Solution:
         for r in range(len(nums)):
             summ+=nums[r]
             while summ>=target:
-                mn=min(mn,r-l+1)
+                
                 summ-=nums[l]
+                mn=min(mn,r-l+1)    
                 l+=1
+                
         return 0 if mn == float('inf') else mn        
         
