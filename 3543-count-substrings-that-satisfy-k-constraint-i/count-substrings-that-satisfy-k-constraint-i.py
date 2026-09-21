@@ -14,21 +14,17 @@ class Solution:
         freq={}
         l=0
        
-        count=z=o=0
+        count=0
+        
        
         
         for i in range(len(s)):
-            if s[i]=='0':
-                z+=1
-            else:
-                o+=1
-
-            freq[s[i]]=freq.get(s[i],0)+1
-            while z>k and o>k :
-                if s[l]=='0':
-                    z-=1
-                else:
-                    o-=1    
+            
+            freq[s[i]]=freq.get(s[i],0)+1 
+            
+            while freq.get('0',0) > k and freq.get('1',0)>k :
+                freq[s[l]]-=1
+                    
                 #freq[s[l]]-=1
                 l+=1
             count+=i-l+1
