@@ -7,11 +7,14 @@ class Solution:
                 st.append(score)
                 score=0
             else:
-                ins =max(2 * score,1)
-                score=st.pop()+ins
-        return score        
+                ins=max(1, 2*score)
+                score=st.pop()+ ins
+                # if s[i-1]=="(":
+                #     score=st.pop()+1
+                # else:
+                #     score=st.pop() + 2 * score
             #st.append(s[i])
-        #return score                     
+        return score                     
 
             
 
