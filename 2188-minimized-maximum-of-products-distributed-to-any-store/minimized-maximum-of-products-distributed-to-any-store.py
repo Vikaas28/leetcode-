@@ -1,3 +1,5 @@
+
+import math 
 class Solution:
     def num(self, nums, able, n):
         # p=1
@@ -11,7 +13,8 @@ class Solution:
         # return p <= n
         total=0
         for num in nums:
-            total+=(num+able-1)//able
+            #total+=math.ceil(num/able)
+            total+=math.ceil(num/able)
         return total<=n   
 
     def minimizedMaximum(self, n: int, quantities: List[int]) -> int:
