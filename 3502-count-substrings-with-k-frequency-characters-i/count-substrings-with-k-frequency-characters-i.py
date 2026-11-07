@@ -1,6 +1,6 @@
 class Solution:
     def numberOfSubstrings(self, s: str, k: int) -> int:
-        def most(k):
+        
             if k < 0 :
                 return 0
             mp={}
@@ -16,7 +16,6 @@ class Solution:
                     l+=1
                 
             return count
-        ans=most(k)
-        return ans      
+           
         #return most(k)-most(k-1)                  
         
